@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malki</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'FbVersatily-Regular';
+      src: url("webfont/FbVersatily-Regular.woff2") format('woff2'),
+           url("webfont/FbVersatily-Regular.woff") format('woff');
+    }
+
+    @font-face {
+      font-family: 'FbVersatily-Bold';
+      src: url("webfont/FbVersatily-Bold.woff2") format('woff2'),
+           url("webfont/FbVersatily-Bold.woff") format('woff');
+    }
+
+    body {
+      font-family: 'FbVersatily-Regular', sans-serif;
+      background: url("רקע תיק עבודות גריד-11.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #FFFBF5;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 60px;
+      z-index: 1000;
+    }
+
+    nav {
+      background: #0B173B;
+      padding: 12px 36px;
+      border-radius: 40px;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav a {
+      color: #FFFBF5;
+      text-decoration: none;
+      font-size: 26px;
+    }
+
+    nav a.active { color: #ED1A37; }
+
+    main { padding-top: 180px; }
+
+    /* HERO */
+    .hero-content {
+      min-height: calc(100vh - 180px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-row {
+      display: flex;
+      gap: 40px;
+      flex-direction: row-reverse;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .main-logo {
+      width: 700px;
+      max-width: 80vw;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      font-size: 28px;
+      padding: 8px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary { background: #ED1A37; color: #fff; }
+    .btn-outline { border: 2px solid #ED1A37; color: #fff; }
+
+    /* QUOTE */
+    .quote-section {
+      background: #FFFBF5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      padding: 100px 1% 150px;
+    }
+
+    .star {
+      position: absolute;
+      right: 1%;
+      top: 52%;
+      transform: translateY(-50%);
+      width: 1060px;
+      max-width: 62vw;
+    }
+
+    .quote-box {
+      width: 100%;
+      text-align: center;
+      color: #0B173B;
+      margin-top: 170px;
+      margin-right: 410px;
+      padding: 32px 44px;
+      z-index: 2;
+    }
+
+    .quote-box p { font-size: 44px; }
+
+    .bold {
+      font-family: 'FbVersatily-Bold';
+      display: block;
+    }
+
+    .signature-img { width: 160px; }
+
+    /* GAP */
+    .section-gap { height: 15vh; }
+
+    /* SERVICES */
+    .services {
+      display: flex;
+      width: 100%;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .service-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: transparent;
+      color: #FFFBF5;
+    }
+
+    .service-box img {
+      width: 100%;
+      max-width: 220px;
+      margin-bottom: 20px;
+    }
+
+    .service-box h3 {
+      font-size: 44px;
+      line-height: 1.1;
+    }
+
+    /* 🔥 פס 3 צבעים */
+    .color-bar {
+      width: 100%;
+      height: 20px;
+      display: flex;
+    }
+
+    .color-bar div {
+      flex: 1;
+    }
+
+    .color1 { background: #ED1A37; }
+    .color2 { background: #FFFBF5; }
+    .color3 { background: #0B173B; }
+
+    /* CONTACT */
+    .contact-section {
+      min-height: 100vh;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* 🔥 כוכב מוגדל פי 2 */
+    .contact-image {
+      width: 240px;
+    }
+
+    .contact-section h2 {
+      font-size: 64px;
+      font-family: 'FbVersatily-Bold';
+    }
+
+    .contact-form {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 50px;
+      border: none;
+      background: #F5F2EE;
+      color: #0B173B;
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .contact-form textarea {
+      border-radius: 30px;
+      min-height: 90px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      color: #ED1A37;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0B173B;
+      color: #FFFBF5;
+      padding: 6px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 26px;
+    }
+
+    .logo-img { height: 22px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-row { flex-direction: column; }
+      .services { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      nav a { font-size: 16px; }
+      .service-box h3 { font-size: 26px; }
+      .contact-section h2 { font-size: 40px; }
+      .contact-image { width: 140px; }
+      footer { font-size: 18px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#">בית</a>
+    <a href="#">אודות</a>
+    <a href="#">תיק עבודות</a>
+    <a href="#">גלריה</a>
+    <a href="#">בלוג</a>
+    <a href="#" class="active">דברו איתי</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero-content">
+    <div class="hero-row">
+      <img src="לדף-הבית.gif" class="main-logo">
+
+      <div class="buttons">
+        <a href="#" class="btn btn-primary">תיק עבודות</a>
+        <a href="#" class="btn btn-outline">דברו איתי</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="quote-section">
+    <img src="מתחלף.gif" class="star">
+    <div class="quote-box">
+      <p>
+        "חשוב לי שתצאו מרוצים,<br>
+        חשוב לי להפוך למציאות יפה<br>
+        את כל הדמיונות והפנטזיות שלכם...<br>
+        אני רק צריכה השראה וסיעתא דשמיא<br>
+        <span class="bold">כדי לעצב את זה!"</span>
+      </p>
+      <img src="חתימה.png" class="signature-img">
+    </div>
+  </section>
+
+  <div class="section-gap"></div>
+
+  <section class="services">
+    <div class="service-box">
+      <img src="כוכב-כחול.gif">
+      <h3>דפי נחיתה<br>ובניית אתרים</h3>
+    </div>
+
+    <div class="service-box">
+      <img src="כוכב-אדום.gif">
+      <h3>מיתוג<br>ובניית קונספט</h3>
+    </div>
+
+    <div class="service-box">
+      <img src="כוכב-לבן.gif">
+      <h3>עימוד<br>ועיצוב גרפי</h3>
+    </div>
+  </section>
+
+  <div class="section-gap"></div>
+
+  <!-- 🔥 פס צבעים -->
+  <div class="color-bar">
+    <div class="color1"></div>
+    <div class="color2"></div>
+    <div class="color3"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <img src="כוכב-3-צבעים.gif" class="contact-image">
+
+    <h2>Talk with me</h2>
+
+    <form class="contact-form">
+      <input type="text" placeholder="שם">
+      <input type="text" placeholder="טלפון">
+      <input type="email" placeholder="כתובת מייל">
+      <textarea placeholder="וכאן כל מה שיש לך להגיד או לשאול"></textarea>
+    </form>
+
+    <div class="contact-info">
+      054.854.6905 | mal0548546905@gmail.com
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>עיצוב, אפיון, ופיתוח</div>
+  <img src="לוגו לפוטר.png" class="logo-img">
+  <div>email@email.com</div>
+</footer>
+
+</body>
+</html>
