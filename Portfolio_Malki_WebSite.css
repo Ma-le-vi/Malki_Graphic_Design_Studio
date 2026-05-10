@@ -1,0 +1,101 @@
+/* עיצוב אזור הכותרת העליונה */
+.portfolio-header {
+  text-align: center;
+  width: 100%;
+}
+
+.portfolio_page {
+  display: inline-block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  object-fit: contain;
+}
+
+/* קונטיינר מעוצב להטמעת ה-PDF - מורחב מאוד (95% מרוחב המסך עד 1600px) */
+.pdf-embed-container {
+  width: 95%;
+  max-width: 1600px;
+  height: 85vh; /* גובה מוגדל בהתאמה לרוחב החדש */
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* עיצוב ה-iframe עצמו */
+.pdf-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* אזור הכפתורים (פתיחה והורדה) */
+.portfolio-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+/* עיצוב משותף לכפתורים */
+.portfolio-actions .action-btn {
+  display: inline-block;
+  padding: 10px 36px;
+  font-size: 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'FbVersatily', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-actions .action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* אפקט ריחוף לכפתור הראשי */
+.portfolio-actions .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(237, 26, 55, 0.4);
+}
+
+/* עיצוב כפתור ההורדה */
+.portfolio-actions .download-btn {
+  background: transparent;
+  color: #FFFBF5;
+  border: 2px solid #ED1A37;
+}
+
+.portfolio-actions .download-btn:hover {
+  background: rgba(237, 26, 55, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* התאמות רספונסיביות למסכים קטנים (מובייל וטאבלט) */
+@media (max-width: 768px) {
+  .pdf-embed-container {
+    width: 100%;
+    height: 55vh;
+    padding: 0 10px;
+    margin-bottom: 25px;
+  }
+  
+  .portfolio-actions {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .portfolio-actions .action-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}

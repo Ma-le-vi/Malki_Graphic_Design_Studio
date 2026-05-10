@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תיק עבודות</title>
+
+  <link rel="stylesheet" href="Malki_website.css">
+  <link rel="stylesheet" href="Portfolio_Malki_WebSite.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="Malki_website.html">בית</a>
+    <a href="AboutMe_Malki_WebSite.html">אודות</a>
+    <a href="Portfolio_Malki_WebSite.html">תיק עבודות</a>
+    <a href="Gallery_Malki_WebSite.html">גלריה</a>
+    <a href="Blog_Malki_WebSite.html">בלוג</a>
+    <a href="Contact_Malki_WebSite.html" class="active">דברו איתי</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="portfolio-header">
+    <img src="תיק עבודות.png" class="portfolio_page" alt="תיק עבודות">
+  </div>
+
+  <section class="pdf-embed-container">
+    <iframe src="תיק עבודות 2026.pdf" title="תצוגת תיק עבודות"></iframe>
+  </section>
+
+  <div class="portfolio-actions">
+    <a href="תיק עבודות 2026.pdf" target="_blank" class="btn btn-primary action-btn">פתיחה במסך מלא</a>
+    <a href="#" onclick="event.preventDefault(); forceDownload('תיק עבודות 2026.pdf', 'תיק עבודות 2026.pdf');" class="btn btn-outline action-btn download-btn">להורדה</a>
+  </div>
+
+</main>
+
+<footer>
+  <div>עיצוב, אפיון, ופיתוח</div>
+  <img src="לוגו לפוטר.png" class="logo-img" alt="לוגו פוטר">
+  <div>mal0548546905@gmail.com</div>
+</footer>
+
+<script>
+function forceDownload(url, fileName) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      // יצירת קישור זמני נסתר שמוריד את הקובץ ישירות כ-Blob
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = blobUrl;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      // ניקוי הזיכרון לאחר ההורדה
+      window.URL.revokeObjectURL(blobUrl);
+      document.body.removeChild(a);
+    })
+    .catch(() => {
+      // גיבוי במקרה של שגיאה
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      a.click();
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* --- הגדרות כלליות לדף אודות --- */
+
+body {
+  /* רקע הגריד הקבוע שמופיע רק בסקשנים השקופים */
+  background: url("רקע תיק עבודות גריד-11.jpg") no-repeat center center fixed !important;
+  background-size: cover !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'FbVersatily', sans-serif !important;
+}
+
+h2, h3, p, a, span, button {
+  font-family: 'FbVersatily', sans-serif !important;
+}
+
+/* ביטול הפדינג מהקונטיינר הראשי כדי שהשמנת יתחיל מלמעלה */
+.about-main-container {
+  padding-top: 0 !important;
+}
+
+/* --- סקשן 1: אודות (רקע שמנת) --- */
+.about-hero {
+  background-color: #FFFBF5; /* צבע השמנת */
+  width: 100%;
+  /* הפדינג כאן דואג שהתוכן יתחיל מתחת להדר */
+  padding: 180px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.AboutMe-img {
+  display: block;
+  margin: 0 auto 40px;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+}
+
+.about-text {
+  color: #0B173B;
+  font-size: 26px; 
+  line-height: 1.5;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bold-intro {
+  font-weight: bold;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+/* --- סקשן 2: הסטודיו (כחול כהה) --- */
+.studio-features {
+  /* שימוש ב-RGBA לשקיפות (0.85 זה רמת האטימות) */
+  background-color: rgba(11, 23, 59, 0.80); 
+  color: #FFFBF5;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.features-title {
+  font-weight: 900;
+  font-size: 56px;
+  margin-bottom: 80px;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 120px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.feature-name {
+  font-size: 34px;
+  font-weight: bold;
+  color: #ED1A37; /* אדום */
+  margin-bottom: 15px;
+}
+
+.feature-desc {
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+/* --- סקשן 3: קריאה לפעולה (שקוף על הגריד) --- */
+.call-to-action {
+  background-color: transparent; 
+  padding: 180px 20px;
+  text-align: center;
+}
+
+.cta-title {
+  font-weight: 900;
+  font-size: 64px;
+  color: #FFFBF5;
+  margin-bottom: 50px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ED1A37; /* כפתור אדום בולט */
+  color: #FFFBF5;
+  padding: 25px 60px;
+  border-radius: 50px;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* פוטר */
+footer {
+  background: #0B173B;
+  color: #FFFBF5;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-img {
+  height: 40px;
+}
