@@ -1,0 +1,308 @@
+/* Blog_Malki_WebSite.css */
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'FbVersatily', 'Inter', sans-serif;
+  background: url("רקע תיק עבודות גריד-11.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #0B173B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 120px 0 80px;
+  flex: 1;
+  width: 100%;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Blog Header */
+.blog-header {
+  text-align: center;
+  margin: 0 auto 50px;
+}
+
+.blog-header h1 {
+  font-size: clamp(60px, 8vw, 100px);
+  font-family: 'FbVersatily', sans-serif;
+  font-weight: 900;
+  margin: 0;
+  color: #0B173B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+
+
+.title-img {
+  width: 550px;
+  height: auto;
+      padding-top: 20px;
+}
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Blog Post Card */
+.blog-post {
+  background: #FFFFFF;
+  border: 4px solid #ED1A37;
+  border-radius: 0; /* פינות ישרות כמו בעיצוב */
+  padding: 50px 30px 40px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* אנימציה חלקה וקופצנית */
+  cursor: pointer;
+}
+
+/* Hover Effects (ריחופים) */
+.blog-post:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(237, 26, 55, 0.15); /* צל אדמדם */
+}
+
+.blog-post:hover .blog-star {
+  transform: rotate(15deg) scale(1.1); /* הכוכב מסתובב וגדל */
+}
+
+.blog-post:hover .read-more {
+  transform: scale(1.05);
+}
+
+.blog-post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-star {
+  width: 130px; /* הותאם לגודל בתמונה */
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+/* Blog Post Content */
+.blog-post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.blog-post h2 {
+  font-size: clamp(26px, 2vw, 32px);
+  font-family: 'FbVersatily', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: #0B173B;
+  line-height: 1.1;
+}
+
+.read-more {
+  margin-top: 30px;
+  text-align: center;
+  color: #ED1A37;
+  font-family: 'FbVersatily', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-header h1 {
+    font-size: 50px;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post {
+    min-height: 400px;
+    padding: 40px 20px;
+  }
+}
+/* Blog_Malki_WebSite.css */
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'FbVersatily', 'Inter', sans-serif;
+  background: url("רקע תיק עבודות גריד-11.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #0B173B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 120px 0 80px;
+  flex: 1;
+  width: 100%;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Blog Header */
+.blog-header {
+  text-align: center;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🌟 תיקון רספונסיביות לכותרת "בלוג" - מונע חריגה במסכים קטנים 🌟 */
+.title-img {
+  width: 100%;
+  max-width: 550px; /* שומר על הגודל המקורי שלך במסכים גדולים */
+  height: auto;     /* שומר על פרופורציות התמונה תמיד */
+  display: block;
+}
+
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  /* 🌟 שיפור ה-Grid: מתאים את עצמו אוטומטית למספר הטורים הנכון לפי רוחב המסך 🌟 */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  direction: rtl; 
+}
+
+/* Blog Post Card */
+.blog-post {
+  background: #FFFBF5;
+  border-radius: 40px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* אנימציה חלקה וקופצנית המקורית */
+  cursor: pointer;
+}
+
+/* Hover Effects (ריחופים מקוריים) */
+.blog-post:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(237, 26, 55, 0.15); /* צל אדמדם */
+}
+
+.blog-post:hover .blog-star {
+  transform: rotate(15deg) scale(1.1); /* הכוכב מסתובב וגדל */
+}
+
+.blog-post:hover .read-more {
+  transform: scale(1.05);
+}
+
+.blog-post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-star {
+  width: 130px; /* הותאם לגודל בתמונה */
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+/* Blog Post Content */
+.blog-post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.blog-post h2 {
+  font-size: clamp(22px, 2.2vw, 32px); /* התאמה דינמית עדינה לגודל הפונט */
+  font-family: 'FbVersatily', sans-serif;
+  font-weight: bold;
+  color: #0B173B;
+  margin-bottom: 40px;
+  line-height: 1.3;
+}
+
+/* Read More Link */
+.read-more {
+  font-size: 20px;
+  font-family: 'FbVersatily', sans-serif;
+  color: #ED1A37; /* אדום מותג */
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #ED1A37;
+  padding-bottom: 4px;
+  transition: transform 0.3s ease;
+  margin-top: auto; 
+}
+
+/* 🌟 התאמות מיוחדות למסכים סלולריים (Media Queries) 🌟 */
+@media (max-width: 600px) {
+  main {
+    padding: 140px 0 60px; /* מרווח עליון מותאם כדי שלא יתנגש עם ההדר הנייד */
+  }
+
+  .blog-container {
+    padding: 0 16px; /* צמצום שוליים עדין בנייד כדי לתת יותר מקום לתוכן */
+  }
+
+  .blog-grid {
+    gap: 24px; /* רווחים מעט קטנים יותר בין כרטיס לכרטיס בנייד */
+  }
+
+  .blog-post {
+    padding: 30px 20px; /* כרטיסים מעט יותר מהודקים בנייד */
+  }
+
+  .blog-post h2 {
+    font-size: 22px; /* גודל טקסט קבוע וקריא לסמארטפונים */
+    margin-bottom: 25px;
+  }
+}
